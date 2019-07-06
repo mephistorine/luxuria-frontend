@@ -1,10 +1,13 @@
 import { Component } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'lux-root',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  title = 'luxuria-frontend'
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('ru')
+    translate.use('ru')
+  }
 }
